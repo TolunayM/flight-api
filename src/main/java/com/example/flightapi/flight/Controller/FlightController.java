@@ -20,6 +20,7 @@ public class FlightController {
     }
 
     @RequestMapping(method = RequestMethod.POST,value = "/flightapi/v1/add-flight")
+
     public void createFlight(@RequestBody Flight flight){
         flightService.createFlight(flight);
     }

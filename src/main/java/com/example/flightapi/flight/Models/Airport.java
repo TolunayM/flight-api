@@ -15,6 +15,7 @@ public class Airport {
     }
 
     @Id
+    @GeneratedValue
     Integer id;
     String city;
 

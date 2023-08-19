@@ -5,7 +5,9 @@ import com.example.flightapi.flight.Repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -32,5 +34,14 @@ public class FlightService {
     public void deleteFlight(Integer id){
         flightRepository.deleteById(id);
     }
+
+    public List<Flight> findOneWayFlights(String departureAirport, String arrivalAirport,Date departureTime){
+        return flightRepository.findOneWayFlights(departureAirport,arrivalAirport,departureTime);
+    }
+
+    public List<Flight> findTwoWayFlights(String departureAirport, String arrivalAirport,Date arrivalTime){
+        return flightRepository.findTwoWayFlights(departureAirport,arrivalAirport,arrivalTime);
+    }
+
 
 }

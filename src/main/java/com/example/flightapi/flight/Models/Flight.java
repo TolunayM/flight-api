@@ -2,7 +2,12 @@ package com.example.flightapi.flight.Models;
 
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
@@ -20,7 +25,6 @@ public class Flight {
     private Airport departureAirport;
     @ManyToOne
     private Airport arrivalAirport;
-
     private Date departureTime;
     private Date arrivalTime;
     private double price;
