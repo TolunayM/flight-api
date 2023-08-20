@@ -4,9 +4,6 @@ import com.example.flightapi.flight.Models.Flight;
 import com.example.flightapi.flight.Repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +16,6 @@ public class FlightService {
     public List<Flight> getAllFlights(){
         return flightRepository.findAll();
     }
-
 
     public void createFlight(Flight flight){
         flightRepository.save(flight);
@@ -43,6 +39,5 @@ public class FlightService {
     public List<Flight> findTwoWayFlights(String departureAirport, String arrivalAirport,Date arrivalTime){
         return flightRepository.findTwoWayFlights(departureAirport,arrivalAirport,arrivalTime);
     }
-
 
 }

@@ -7,8 +7,6 @@ import jakarta.persistence.*;
 @Table(name = "airporttable",schema = "flightdb")
 public class Airport {
 
-
-
     public Airport(Integer id, String city) {
         this.id = id;
         this.city = city;
@@ -20,9 +18,7 @@ public class Airport {
     String city;
 
     public Airport() {
-
     }
-
 
     public Integer getId() {
         return id;

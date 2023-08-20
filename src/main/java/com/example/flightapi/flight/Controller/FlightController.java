@@ -8,30 +8,31 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//TODO TEK BIR MAPPING UZERINDEN HEPSINI DUZENLE
+
+@RequestMapping("/flightapi/v1/flights")
 @RestController
 public class FlightController {
 
     @Autowired
     private FlightService flightService;
 
-    @RequestMapping(method = RequestMethod.GET,value ="/flightapi/v1/all-flights")
+    @RequestMapping(method = RequestMethod.GET,value ="/all-flights")
     public List<Flight> getAllFlights(){
         return flightService.getAllFlights();
     }
 
-    @RequestMapping(method = RequestMethod.POST,value = "/flightapi/v1/add-flight")
+    @RequestMapping(method = RequestMethod.POST,value = "/add-flight")
 
     public void createFlight(@RequestBody Flight flight){
         flightService.createFlight(flight);
     }
 
-    @RequestMapping(method = RequestMethod.PUT,value = "/flightapi/v1/update-flight/{id}")
+    @RequestMapping(method = RequestMethod.PUT,value = "/update-flight/{id}")
     public void updateFlight(@RequestBody Flight flight, @PathVariable Integer id){
         flightService.updateFlight(flight,id);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE,value = "/flightapi/v1/delete-flight/{id}")
+    @RequestMapping(method = RequestMethod.DELETE,value = "/delete-flight/{id}")
     public void deleteFlight(@PathVariable Integer id){
         flightService.deleteFlight(id);
     }

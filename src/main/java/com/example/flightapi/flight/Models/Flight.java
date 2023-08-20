@@ -2,12 +2,6 @@ package com.example.flightapi.flight.Models;
 
 
 import jakarta.persistence.*;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
@@ -16,11 +10,8 @@ import java.util.Date;
 public class Flight {
 
     @Id
+    @GeneratedValue
     Integer id;
-
-
-
-    //TODO column
     @ManyToOne
     private Airport departureAirport;
     @ManyToOne
@@ -30,7 +21,6 @@ public class Flight {
     private double price;
 
     public Flight(){
-
     }
     public Flight(Integer id, Airport departureAirport, Airport arrivalAirport, Date departureTime, Date arrivalTime, double price) {
         this.id = id;

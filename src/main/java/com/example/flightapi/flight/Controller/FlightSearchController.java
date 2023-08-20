@@ -16,6 +16,7 @@ public class FlightSearchController {
     @Autowired
     private FlightService flightService;
 
+    //Check for arrivalTime if it's not null return list with rotated airports
     @GetMapping
     public ResponseEntity<List<Map<String, Object>>> searchFlights(
             @RequestParam String departureAirport,
@@ -35,8 +36,6 @@ public class FlightSearchController {
             flightMap.put("departureTime",flight.getDepartureTime());
             flightMap.put("arrivalTime",flight.getArrivalTime());
 
-
-
         }
         response.add(flightMap);
         if(arrivalTime != null){
@@ -54,7 +53,6 @@ public class FlightSearchController {
         }
             response.add(flightMap2);
         }
-
 
         return ResponseEntity.ok(response);
     }

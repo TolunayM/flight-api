@@ -13,6 +13,6 @@ public class AuthController {
 
     @GetMapping("/secured")
     public String secured(){
-        return "Get inside!!!";
+        return "Login success";
     }
 }
