@@ -20,6 +20,7 @@ public class FlightService {
         return flightRepository.findAll();
     }
 
+
     public void createFlight(Flight flight){
         flightRepository.save(flight);
     }
