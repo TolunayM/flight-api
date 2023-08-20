@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//TODO TEK BIR MAPPING UZERINDEN HEPSINI DUZENLE
 @RestController
 public class FlightController {
 

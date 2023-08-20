@@ -17,7 +17,6 @@ public class FlightSearchController {
     private FlightService flightService;
 
     @GetMapping
-
     public ResponseEntity<List<Map<String, Object>>> searchFlights(
             @RequestParam String departureAirport,
             @RequestParam String arrivalAirport,
