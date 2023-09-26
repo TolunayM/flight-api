@@ -13,8 +13,12 @@ import java.util.*;
 @RequestMapping("/flightapi/v1/search")
 public class FlightSearchController {
 
-    @Autowired
+    
     private FlightService flightService;
+
+    private FlightSearchController(FlightService flightService){
+        this.flightService = flightService;
+    }
 
     //Check for arrivalTime if it's not null return list with rotated airports
     @GetMapping

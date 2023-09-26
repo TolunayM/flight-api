@@ -13,8 +13,11 @@ import java.util.List;
 @RestController
 public class FlightController {
 
-    @Autowired
     private FlightService flightService;
+
+    private FlightController(FlightService flightService){
+        this.flightService = flightService;
+    }
 
     @RequestMapping(method = RequestMethod.GET,value ="/all-flights")
     public List<Flight> getAllFlights(){

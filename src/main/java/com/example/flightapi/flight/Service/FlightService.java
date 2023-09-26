@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class FlightService {
 
-    @Autowired
+    
     private FlightRepository flightRepository;
+
+    private FlightService(FlightRepository flightRepository){
+        this.flightRepository = flightRepository;
+    }
 
     public List<Flight> getAllFlights(){
         return flightRepository.findAll();

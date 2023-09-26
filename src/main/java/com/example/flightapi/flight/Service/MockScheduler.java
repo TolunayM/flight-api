@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class MockScheduler {
 
-    @Autowired
+    
     private FlightRepository flightRepository;
+
+    private MockScheduler(FlightRepository flightRepository){
+        this.flightRepository = flightRepository;
+    }
 
     @Scheduled(cron = "0 0 1 * * ?") //call every day at 01.00
     public void fetchAndSaveFlights() {

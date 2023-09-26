@@ -12,8 +12,11 @@ import java.util.List;
 @RestController
 public class AirportController {
 
-    @Autowired
     private AirportService airportService;
+
+    private AirportController(AirportService airportService){
+        this.airportService = airportService;
+    }
 
     @RequestMapping(method = RequestMethod.GET,value ="/all-airports")
     public List<Airport> getAllAirports(){
